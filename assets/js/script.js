@@ -53,7 +53,7 @@ if (!isNaN(numJuegos) && numJuegos >= 1 && numJuegos <= 20) {
           resultado = `Felicitaciones, ganaste!! ${eleccionUser} le gana a ${eleccionCPU}`;
           break;
         default:
-          resultado = `Muy bien!! pero perdiste... jajaja tu ${eleccionUser} pierde contra ${eleccionCPU}`;
+          resultado = `Perdiste... jajaja tu ${eleccionUser} pierde contra ${eleccionCPU}`;
           break;
       }
       // enviamos el mensaje con el resultado
