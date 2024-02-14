@@ -30,7 +30,7 @@ function jugadaCPU() {
 // proceso de datos
 // creamos un if con validación que el numero de intentos sea mayor o igual a 1 y menos o igual a 20, si cumple pasa al for.
 if (!isNaN(numJuegos) && numJuegos >= 1 && numJuegos <= 20) {
-// creamos un for que se repita por cada numero de intentos que selecciono el usuario
+  // creamos un for que se repita por cada numero de intentos que selecciono el usuario
   for (let i = 0; i < numJuegos; i++) {
     // Le asignamos a la variable eleccionCPU el valor que nos da la función jugadaCPU (Math.random)
     eleccionCPU = jugadaCPU();
@@ -38,24 +38,18 @@ if (!isNaN(numJuegos) && numJuegos >= 1 && numJuegos <= 20) {
     let eleccionUser = prompt("Escribe tu elección: Piedra, Papel o Tijera");
     // Creamos un if y le entregamos los parametros permitidos que el usuario puede ingresar
     if (
-      (eleccionUser === "Piedra",
-      "piedra",
-      "PIEDRA" || eleccionUser === "Papel",
-      "papel",
-      "PAPEL" || eleccionUser === "Tijera",
-      "tijera",
-      "TIJERA")
+      (eleccionUser === "Piedra" || eleccionUser === "Papel" || eleccionUser === "Tijera")
     ) {
-        // declaramos la variable resultado que se le asignara el valor que nos de el switch que continúa
+      // declaramos la variable resultado que se le asignara el valor que nos de el switch que continúa
       let resultado = "";
       // Con switch aremos la comparacion entre EleccionUser y eleccionCPU, le asignaremos un resultado
       switch (true) {
         case eleccionUser === eleccionCPU:
           resultado = `Empataron... ambos escogieron ${eleccionUser}`;
           break;
-        case eleccionUser === "Piedra" && eleccionCPU === "Tijera":
-        case eleccionUser === "Papel" && eleccionCPU === "Piedra":
-        case eleccionUser == "Tijera" && eleccionCPU === "Papel":
+        case (eleccionUser === "Piedra" && eleccionCPU === "Tijera"):
+        case (eleccionUser === "Papel" && eleccionCPU === "Piedra"):
+        case (eleccionUser === "Tijera" && eleccionCPU === "Papel"):
           resultado = `Felicitaciones, ganaste!! ${eleccionUser} le gana a ${eleccionCPU}`;
           break;
         default:
@@ -73,11 +67,11 @@ if (!isNaN(numJuegos) && numJuegos >= 1 && numJuegos <= 20) {
     }
   }
 } else if (numJuegos === 0) {
-    //validamos que los numeros de intentos no seán igual a 0, le enviamos un mensaje y le recargamos la pestaña del navegador
+  //validamos que los numeros de intentos no seán igual a 0, le enviamos un mensaje y le recargamos la pestaña del navegador
   alert("No puede seleccionar 0 intentos");
   window.location.reload();
 } else {
-// Enviamos un mensaje de error y recargamos la pestaña del navegador
+  // Enviamos un mensaje de error y recargamos la pestaña del navegador
   alert("Solo puede jugar desde 1 hasta 20 intentos");
   window.location.reload();
 }
